@@ -1,6 +1,6 @@
 {
 
-  description = "k8s cluster"
+  description = "k8s cluster";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
