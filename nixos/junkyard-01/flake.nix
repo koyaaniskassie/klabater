@@ -19,7 +19,8 @@
         nixosConfigurations.junkyard-01 = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
-              /etc/nixos/configuration.nix
+              ,/general-settings.nix
+
               ({ config, pkgs, ... }: {
                   boot.isContainer = false;
 
