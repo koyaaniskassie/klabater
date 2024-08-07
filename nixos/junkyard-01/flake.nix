@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flke-utils";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }:
@@ -19,7 +19,7 @@
         nixosConfigurations.junkyard-01 = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
-              ,/general-settings.nix
+              ./general-settings.nix
               ./hardware-configuration.nix
 
               ({ config, pkgs, ... }: {
@@ -64,6 +64,7 @@
 
                 users.users.kassie = {
                     isNormalUser = true;
+                    description = "Kubernetes administrator";
                     home = "/home/kassie";
                     extraGroups = [ "wheel" "networkmanager" "docker" ];
                     hashedPassword = "$6$UJF4nxZgr0sWa87q$OL.oo1txNlzy9SrxWs0N8aN3Ox9PttBXfpbBcOviS67qLN8EWWieqWBpm4OlK1ZiA3lWisI7gwyhvtKC9JZem/"
