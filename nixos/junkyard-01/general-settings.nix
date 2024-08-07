@@ -30,4 +30,6 @@
   };
 
   console.keyMap = "pl2";
+
+  networking.networkmanager.enable = true;
 }
