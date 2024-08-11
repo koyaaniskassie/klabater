@@ -3,7 +3,7 @@
 {
 
   services.kubernetes = {
-    roles = ["master", "node"];
+    roles = ["master" "node"];
     masterAddress = "junkyard-01";
     apiserverAddress = "https://junkyard-01:6443";
     easyCerts = true;
