@@ -76,4 +76,4 @@
     kubernetes
     cri-tools
   ];
-}
+};
