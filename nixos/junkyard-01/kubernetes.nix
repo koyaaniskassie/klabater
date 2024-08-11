@@ -44,7 +44,6 @@
     };
   };
 
-  services.flannel.enable = true;
   services.flannel = {
     enable = true;
     network = "10.244.0.0/16";
