@@ -11,8 +11,6 @@
       securePort = 6443;
       advertiseAddress = "192.168.1.37";
     };
-    flannel.enable = true;
-    kubelet.extraOpts = "--network-plugin=cni";
   };
 
   networking.firewall = {
@@ -50,20 +48,5 @@
     cri-tools
     cni-plugins
   ];
-
-  # Ensure the CNI plugin directory exists
-  # system.activationScripts.mkCniPluginDir = ''
-  #   mkdir -p /opt/cni/bin
-  # '';
-
-  # Set up Flannel configuration
-  # environment.etc."kube-flannel/net-conf.json".text = ''
-  #   {
-  #     "Network": "10.244.0.0/16",
-  #     "Backend": {
-  #       "Type": "vxlan"
-  #     }
-  #   }
-  # '';
 
 }
