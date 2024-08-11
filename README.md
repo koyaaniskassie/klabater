@@ -1,5 +1,6 @@
 # Intro
 Homelab configuration with k8s and whatever hardware I can find
+files under `nixos-anywhere` are for archival purpose and are not used anymore
 
 # Spec
 ## Homelab-01 (controller)
