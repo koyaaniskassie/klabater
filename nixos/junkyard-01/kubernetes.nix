@@ -52,18 +52,18 @@
   ];
 
   # Ensure the CNI plugin directory exists
-  system.activationScripts.mkCniPluginDir = ''
-    mkdir -p /opt/cni/bin
-  '';
+  # system.activationScripts.mkCniPluginDir = ''
+  #   mkdir -p /opt/cni/bin
+  # '';
 
   # Set up Flannel configuration
-  environment.etc."kube-flannel/net-conf.json".text = ''
-    {
-      "Network": "10.244.0.0/16",
-      "Backend": {
-        "Type": "vxlan"
-      }
-    }
-  '';
+  # environment.etc."kube-flannel/net-conf.json".text = ''
+  #   {
+  #     "Network": "10.244.0.0/16",
+  #     "Backend": {
+  #       "Type": "vxlan"
+  #     }
+  #   }
+  # '';
 
 }
