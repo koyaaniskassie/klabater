@@ -11,8 +11,6 @@
       securePort = 6443;
       advertiseAddress = "192.168.1.37";
     };
-    addons.dashboard.enable = true;
-
     kubelet.extraOpts = "--network-plugin=cni";
   };
 
