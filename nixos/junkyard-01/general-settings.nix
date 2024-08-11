@@ -32,4 +32,21 @@
   console.keyMap = "pl2";
 
   networking.networkmanager.enable = true;
+
+  services.logind = {
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+    lidSwitch = "ignore";
+
+    extraConfig = ''
+      HandleLidSwitch=ignore
+      HandleLidSwitchExternalPower=ignore
+    '';
+  };
+
+  powerManagement = {
+      enable = true;
+      powertop.enable = true;
+      cpuFreqGovernor = "performance";
+  };
 }
