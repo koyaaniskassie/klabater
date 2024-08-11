@@ -30,6 +30,7 @@
     allowedUDPPorts = [
       8472
     ];
+  };
 
   virtualisation.containerd = {
     enable = true;
@@ -76,4 +77,5 @@
     kubernetes
     cri-tools
   ];
+
 };
