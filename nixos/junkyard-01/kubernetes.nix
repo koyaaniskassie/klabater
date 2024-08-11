@@ -48,32 +48,14 @@
     network = "10.244.0.0/16";
   };
 
-  environment.etc."cni/net.d/10-flannel.conflist".source = pkgs.writeText "10-flannel.conflist" ''
-    {
-      "name": "cbr0",
-      "cniVersion": "0.3.1",
-      "plugins": [
-        {
-          "type": "flannel",
-          "delegate": {
-            "hairpinMode": true,
-            "isDefaultGateway": true
-          }
-        },
-        {
-          "type": "portmap",
-          "capabilities": {
-            "portMappings": true
-          }
-        }
-      ]
-    }
-  '';
+  networking.cni.configDir = "/etc/cni/net.d";
+  networking.cni.plugins = [ pkgs.cni-plugins ];
 
   environment.systemPackages = with pkgs; [
     kubectl
     kubernetes
     cri-tools
+    cni-plugins
   ];
 
 }
