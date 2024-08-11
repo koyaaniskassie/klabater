@@ -16,6 +16,7 @@
         modules = [
           ./general-settings.nix
           ./hardware-configuration.nix
+          ./kubernetes.nix
 
           ({ config, pkgs, ... }: {
             nixpkgs.config.allowUnfree = true;
@@ -25,12 +26,6 @@
               hostName = "junkyard-01";
               firewall.allowedTCPPorts = [
                 22
-                6443 
-                2379 
-                2380 
-                10250 
-                10251 
-                10252
               ];
             };
 
@@ -38,16 +33,6 @@
               enable = true;
               passwordAuthentication = true;
             };
-
-            # services.kubernetes = {
-            #     roles = ["master"];
-            #     masterAddress = "junkyard-01";
-            #     apiserverAddress = "https://junkyard-01:6433";
-            #     easyCerts = true;
-            #     apiServer = {
-            #         extraOpts = "--allow-privileged";
-            #       };
-            #   };
 
             environment.systemPackages = with pkgs; [
               kubectl
