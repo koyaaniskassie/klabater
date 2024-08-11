@@ -13,7 +13,7 @@
     };
     addons.dashboard.enable = true;
 
-    kubelet.extraOps = "--network-plugin=cni";
+    kubelet.extraOpts = "--network-plugin=cni";
   };
 
   networking.firewall = {
