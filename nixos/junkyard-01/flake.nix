@@ -36,6 +36,7 @@
 
             environment.systemPackages = with pkgs; [
               kubectl
+              helm
               vim
               git
               wget
