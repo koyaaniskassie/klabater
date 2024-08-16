@@ -34,6 +34,7 @@
               passwordAuthentication = true;
             };
 
+            services.xserver.enable = true;
             services.xserver.displayManager.startx.enable = true;
 
             environment.systemPackages = with pkgs; [
