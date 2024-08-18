@@ -36,6 +36,7 @@
 
             environment.systemPackages = with pkgs; [
               kubectl
+              kubeseal
               helm
               vim
               git

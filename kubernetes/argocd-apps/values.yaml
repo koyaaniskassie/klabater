@@ -1,0 +1,30 @@
+argocd-apps:
+  projects:
+    klabater:
+      namespace: argocd
+      sourceRepos:
+        - '*'
+      destinations:
+        - namespace: argocd
+          server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+      orphanedResources:
+        warn: true
+
+
+  applications:
+    argoproj:
+      namespace: argocd
+      project: klabater
+      source:
+        repoURL: git@github.com:koyaaniskassie/klabater.git
+        targetRevision: HEAD
+        path: kubernetes/argoproj/
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
