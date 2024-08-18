@@ -1,0 +1,8 @@
+version: '3'
+
+dotenv: ['.env']
+
+tasks:
+  init-argocd:
+    cmds:
+      - echo "Using $KLABATER_ROOT_PATH"
