@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: default
+  project: klabater
   source:
     path: kubernetes/apps/nginx
     repoURL: git@github.com:koyaaniskassie/klabater.git
